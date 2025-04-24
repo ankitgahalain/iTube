@@ -2,31 +2,17 @@ package com.example.itube;
 
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.os.Bundle;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.ArrayList;
 
 
-import android.content.Intent;
-import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class SignupActivity extends AppCompatActivity {
 
@@ -70,7 +56,7 @@ public class SignupActivity extends AppCompatActivity {
 
             if (dbHelper.registerUser(fullName, username, password)) {
                 Toast.makeText(this, "Registration successful!", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(SignupActivity.this, LoginActivity.class));
+                startActivity(new Intent(SignupActivity.this, MainActivity.class));
                 finish();
             } else {
                 Toast.makeText(this, "Username already exists", Toast.LENGTH_SHORT).show();

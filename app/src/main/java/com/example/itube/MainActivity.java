@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class LoginActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     EditText etUsername, etPassword;
     Button btnLogin, btnSignup;
@@ -17,7 +17,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_main);
 
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
 
             if (dbHelper.checkUser(username, password)) {
                 Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                 intent.putExtra("username", username);
                 startActivity(intent);
                 finish();
@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         btnSignup.setOnClickListener(v -> {
-            Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
+            Intent intent = new Intent(MainActivity.this, SignupActivity.class);
             startActivity(intent);
         });
     }
